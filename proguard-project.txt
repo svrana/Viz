@@ -1,0 +1,72 @@
+## Start ABS specific
+-dontwarn com.actionbarsherlock.internal.**
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** { *; }
+-keep class com.actionbarsherlock.** { *; }
+-keep interface com.actionbarsherlock.** { *; }
+
+-keepattributes *Annotation*
+
+## End ABS specific
+
+
+# Start Crittercism specific
+-keep public class com.crittercism.**
+-keepclassmembers public class com.crittercism.*
+{
+    *;
+}
+# End Crittercism specific
+
+
+# Start Flurry specific
+
+-keep class com.flurry.** { *; }
+-dontwarn com.flurry.**
+-keepattributes *Annotation*,EnclosingMethod
+-keepclasseswithmembers class * {
+public <init>(android.context.Context, android.util.AttributeSet, int);
+}
+-keep public class com.google.ads.** { public protected *; }
+-keep public class com.inmobi.androidsdk.** { public protected *; }
+-keep public class com.millenialmedia.android.** { public protected *; }
+-keep public class com.mobclix.android.sdk.** { public protected *; }
+-keep public class com.jumptap.adtag.** { public protected *; }
+
+# end Flurry specific
+
+
+# Millenial Media
+
+-keepclassmembers class com.millennialmedia.android.* { public *; }
+-keep class com.millennialmedia.android.**
+-dontwarn com.millennialmedia.android.NVASpeechKit*
+-dontwarn com.nuance.**
+
+# End Millenial
+
+
+# AdMob Support
+-keep class com.google.ads.**
+
+
+# Mopub
+-keepclassmembers class com.mopub.** { public *; }
+-keep public class com.mopub.**
+
+# Explicitly keep any custom event classes in any package.
+-keep class * extends com.mopub.mobileads.CustomEventBanner {}
+-keep class * extends com.mopub.mobileads.CustomEventInterstitial {}
+-keep class * extends com.mopub.nativeads.CustomEventNative {}
+
+# Support for Android Advertiser ID.
+-keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {*;}
+
+# End Mopub
+
+
+# Miscellaneous
+
+-dontwarn android.test.**
+-dontwarn junit.framework.**

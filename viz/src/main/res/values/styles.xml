@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="Theme.Sherlock.Viz">
+    	<!-- style of the actionbar, where the home button lives -->
+  	    <item name="android:actionBarStyle">@style/VizActionBar</item>
+        <item name="actionBarStyle">@style/VizActionBar</item>
+        
+        <!-- this is the divider between tabs -->
+        <item name="actionBarTabBarStyle">@style/VizActionBarTabBar</item>
+        <item name="android:actionBarTabBarStyle">@style/VizActionBarTabBar</item>
+        
+        <!-- style of the tabs themselves -->
+        <item name="android:actionBarTabStyle">@style/VizActionBarTab</item>
+        <item name="actionBarTabStyle">@style/VizActionBarTab</item>
+        
+        <!-- the color of the actionmode that shows up after long press -->
+        <item name="android:actionModeBackground">@drawable/viz_ab_background</item>
+        <item name="actionModeBackground">@drawable/viz_ab_background</item>
+    </style>
+    
+        
+    <style name="VizActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="android:background">@drawable/viz_tab_unselected</item>
+        <item name="background">@drawable/viz_tab_unselected</item>
+    </style>
+    
+    <style name="VizActionBarTabBar" parent="Widget.Sherlock.ActionBar.TabBar">
+    	<item name="android:showDividers">@null</item>
+    </style>
+    
+     <style name="VizActionBarTab" parent="Widget.Sherlock.ActionBar.TabView">
+        <item name="android:background">@drawable/viz_tab_indicator</item>
+        <item name="background">@drawable/viz_tab_indicator</item>
+    </style>
+
+    <!--
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+     -->
+    <style name="OneProgressBar" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ListHeader">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Airdata">
+        <item name="android:textSize">@dimen/text_size_micro</item>
+        <item name="android:textColor">@color/text_dim</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <!-- Used for metadata in detail views. -->
+    <style name="SmallItems">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="PreferenceHeader">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Used for longer passages of text -->
+    <style name="DescriptionFont">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <!-- Widget items -->
+    <style name="WidgetTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="WidgetTextView.Show">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Notification -->
+    <style name="NotificationText">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Ellipsize">
+        <item name="android:lines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <!-- Workaround for ellipses not working properly -->
+    <style name="Ellipsize.End">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Ellipsize.Middle">
+        <item name="android:ellipsize">middle</item>
+    </style>
+
+    <style name="vizButton" parent="android:Widget.Holo.Button">
+        <item name="android:textStyle">bold</item>
+        <item name="android:minWidth">300dp</item>
+    </style>
+
+    <style name="vizColorButton" parent="vizButton">
+        <item name="android:background">@drawable/button_medium_vizcolor</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="vizButtonSmallStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="vizPinDigit">
+        <item name="android:textSize">37sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="vizLongButton" parent="vizButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="vizSettingsButton" parent="vizLongButton">
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    
+</resources>

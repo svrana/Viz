@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+        Contain possibly in a relativelayout like so:
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="50dip"
+        android:layout_height="120dip"
+        android:background="#77000000" >
+
+    <ImageView 
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_like"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"/>
+
+    <ImageView 
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_comment"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="6dip"/>
+
+    <ImageView 
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_share"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="6dip"/>	    
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="intro_title">Herzlich willkommen bei Viz!</string>
+    <string name="intro_text">Wähle Videos zum Downloaden aus einer der unterstützten Sites aus. Wähle das Video, das du herunterladen möchtest. Wenn der Download abgeschlossen ist, erscheint ein Miniaturbild im Menü unter „Wiedergabe“, wo du das Video abspielen oder entfernen kannst. \n\nUnter „Einstellungen“ kannst du zu Viz Premium upgraden, wenn du Werbung abstellen oder die Premium-Features aktivieren möchtest.\n\nYoutube kann aufgrund seiner Nutzungsbedingungen nicht unterstützt werden.</string>
+    <!-- Error shown when device does not have an sd card or it's not mounted
+         correctly and the app will not function properly -->
+    <string name="cannot_use_app">Viz nicht verwendbar</string>
+    <string name="exit_viz">Beenden</string>
+    <string name="storage_error">Externer Speicher nicht gefunden oder nicht beschreibbar. Dies kann passieren, wenn dein Gerät an einen Computer angeschlossen ist oder wenn es nicht unterstützt wird.</string>
+    <!-- Web browser tab -->
+    <string name="urlbar_hint">URL eingeben (oder im Menü „Lesezeichen“ verwenden)</string>
+    <!-- Appears in the custom search bar added for Vimeo -->
+    <string name="search">Suchen</string>
+    <!-- Download tab -->
+    <string name="downloads_menu_clear">Inaktive löschen</string>
+    <string name="downloads_clear">löschen</string>
+    <string name="download_failed_accept">Ok</string>
+    <string name="downloads_pauseDownload">Download anhalten?</string>
+    <string name="download_pause">Anhalten</string>
+    <string name="download_continue">Weiter</string>
+    <string name="downloads_completeOptions">Video</string>
+    <string name="downloads_remove">Entfernen</string>
+    <string name="downloads_remove_cancel">Abbrechen</string>
+    <string name="downloads_resume_ok">Download fortsetzen</string>
+    <string name="downloads_empty">Keine aktuellen Downloads</string>
+    <string name="download_cancelled">Abgebrochen</string>
+    <string name="download_error_content_length">Dateigröße konnte nicht ermittelt werden</string>
+    <string name="download_error_nofreespace">Nicht genügend freier Speicherplatz im Download-Verzeichnis. Die angeforderte Datei hat %1$s MB, %2$s MB stehen zur Verfügung.</string>
+    <string name="download_remove">Entfernen</string>
+    <string name="download_play">Wiedergeben</string>
+    <string name="download_cancel">Download abbrechen</string>
+    <string name="download_failed">Download fehlgeschlagen</string>
+    <!-- Download dialog -->
+    <string name="savedialog_ok">Download</string>
+    <string name="savedialog_cancel">Abbrechen</string>
+    <string name="savedialog_saveas">Speichern unter:</string>
+    <string name="directorydialog_name">Name: </string>
+    <string name="directorydialog_ok">Erstellen</string>
+    <string name="directorydialog_cancel">Abbrechen</string>
+    <string name="file_exists_error">Datei existiert bereits. Anderen Dateinamen wählen.</string>
+    <string name="invalid_filename">Ungültiger Dateiname.</string>
+    <string name="file_exists_tryagain">Datei existiert bereits. Anderen Dateinamen wählen.</string>
+    <string name="directory_access_error">Konnte nicht auf Download-Verzeichnis zugreifen. Ist dein Gerät an deinen Computer angeschlossen?</string>
+    <string name="database_access_error">Fehler beim Hinzufügen des Downloads zur Datenbank</string>
+    <!-- Play videos tab -->
+    <string name="filemanager_empty">Videos erscheinen hier</string>
+    <string name="filemanagerdialog_deletefile">Video entfernen?</string>
+    <string name="filemanager_thumbnail_contentDescription">Video-Miniaturbild</string>
+    <string name="filemanager_delete_menuitem">Entfernen</string>
+    <string name="filemanager_unlock_menuitem">In Galerie verschieben</string>
+    <string name="filemanager_unlock_dialog">In Galerie verschieben?</string>
+    <string name="filemanager_video_freed">Videos sollten in der Galerie sichtbar sein</string>
+    <string name="filemanager_video_unlock_error">Dieses Video wurde bereits in die Galerie verschoben</string>
+    <string name="filemanager_failed_sharingvideo_general">Video konnte nicht freigegeben werden</string>
+    <string name="filemanager_cancelled_sharing">Abgebrochen</string>
+    <string name="filemanager_video_options">Video-Optionen</string>
+    <string name="premium_upgrade_hook">Das Verschieben von Videos in die Galerie ist ein Premium-Feature. Jetzt auf Viz Premium upgraden!</string>
+    <!-- Favorites/Bookmarks tab -->
+    <string name="favorites_favoriteremoved">aus Favoriten entfernt</string>
+    <string name="favorites_added">zu den Favoriten hinzugefügt</string>
+    <!-- Playing Video -->
+    <string name="videoplayer_resumeplaying">Fortsetzen</string>
+    <string name="videoplayer_noresume">Neustart</string>
+    <string name="resuming_from_position">Fortfahren ab Position</string>
+    <!-- Preference related strings -->
+    <string name="billing_rate_viz">Viz v%1$s bewerten</string>
+    <string name="billing_support_viz">Viz unterstützen</string>
+    <string name="billing_purchase">Jetzt auf Viz Premium upgraden!</string>
+    <string name="billing_viz_purchased">Danke für deine Unterstützung!</string>
+    <string name="amazon_store_notfound">Amazon Appstore konnte nicht gefunden werden</string>
+    <string name="google_store_notfound">Google Play konnte nicht gefunden werden</string>
+    <string name="video_accessibility">Video-Sichtbarkeit</string>
+    <string name="va_description">Nach jedem Download wird das neue Video automatisch der Mediensammlung auf deinem Gerät hinzugefügt. So können Anwendungen von Drittanbietern deine Inhalte ansehen und verwalten. Alternativ kannst du die Videos, die du entsperren möchtest, im Menü unter „Videos“ auswählen, indem du lange darauf drückst und das Symbol „Entsperren“ auswählst.</string>
+    <string name="default_directory_substitute">Standard: zum Ändern Upgrade durchführen</string>
+    <string name="upgrade_to_premium_dialog_title">Upgrade auf Viz Premium</string>
+    <string name="upgrade_to_premium_dialog_description">Vorteile von Viz Premium:\n\n\tKeine Werbung\n\tVideos können der Galerie hinzugefügt werden\n\tVideos können außerhalb von Viz abgespielt werden\n\tDownload-Verzeichnis kann geändert werden\n\tViz kann mit einer PIN gesperrt werden\n\tDu unterstützt die Entwicklung von Viz</string>
+    <string name="upgrade_to_premium_launch_google_play">Weiter zu Google Play</string>
+    <!-- Video related preferences -->
+    <string name="video_preferences">Video-Einstellungen</string>
+    <string name="download_quality_high_preference">Höhere Qualität, längerer Download</string>
+    <string name="download_quality_low_preference">Geringere Qualität, schnellerer Download</string>
+    <string name="download_quality_title">Videoqualität</string>
+    <!-- The title -->
+    <string name="browser_preferences">Browser-Einstellungen</string>
+    <string name="preference_homepage_title">Browser-Startseite</string>
+    <string name="preference_homepage_summary">Seite festlegen, die standardmäßig geladen wird</string>
+    <string name="preference_homepage_dialogTitle">Startseite für Viz-Browser festlegen</string>
+    <!-- As seen in the free version -->
+    <string name="locked_preferences">Premium-Features</string>
+    <!-- As seen in the supported/pro version -->
+    <string name="unlocked_preferences">Premium-Features</string>
+    <string name="video_accessibility_title">Videos in Galerie anzeigen</string>
+    <string name="download_directory_title">Download-Verzeichnis</string>
+    <!-- Download Directory selection info -->
+    <string name="download_directory_chooser">Aktuelles Download-Verzeichnis</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="reset">Zurücksetzen</string>
+    <!-- Lock/Unlock (add videos to phone Gallery) -->
+    <string name="unlock_videos_description">Aktiviert</string>
+    <string name="lock_videos_description">Deaktiviert</string>
+    <string name="lock_videos_free_version_description">Deaktiviert: zum Aktivieren Upgrade durchführen</string>
+    <!-- Lock screen (with PIN access) -->
+    <string name="lock_screen_title">PIN-Sicherheit aktivieren</string>
+    <string name="pin_select_title">PIN-Zugangscode einrichten</string>
+    <string name="lock_screen_summary_on">Für die Benutzung von Viz wird eine PIN erforderlich</string>
+    <string name="lock_screen_summary_off">Es ist keine PIN erforderlich</string>
+    <string name="lock_screen_off_free_version">Deaktiviert: zum Aktivieren Upgrade durchführen</string>
+    <string name="enter_new_pin">Neue PIN eingeben</string>
+    <string name="confirm_pin">Neue PIN bestätigen</string>
+    <string name="enter_pin">PIN eingeben</string>
+    <string name="delete_pin">Löschen</string>
+    <string name="cancel_pin">Abbrechen</string>
+    <string name="pin_enabled">PIN aktiviert!</string>
+    <string name="pin_not_confirmed">PIN wurde nicht bestätigt.</string>
+    <string name="pin_incorrect">Falsche PIN-Nummer.</string>
+    <!-- Playback related preferences -->
+    <string name="autoresume_title">Wiedergabe-Optionen</string>
+    <string name="autoresume_on_description">Wiedergabe ohne Nachfrage fortsetzen</string>
+    <string name="autoresume_off_description">Vor jedem Fortsetzen nachfragen</string>
+    <string-array name="download_quality_options">
+        <item>@string/download_quality_low_preference</item>
+        <item>@string/download_quality_high_preference</item>
+    </string-array>
+    <!-- Download Notification -->
+    <plurals name="notification_title_numvideos">
+        <item quantity="zero">0 Videos werden heruntergeladen</item>
+        <item quantity="one">1 Video wird heruntergeladen</item>
+        <item quantity="other">%d Videos werden heruntergeladen</item>
+    </plurals>
+    <!-- Appears in the notification when there are more than 4 active downloads -->
+    <plurals name="notification_subtitle_numqueued">
+        <item quantity="zero">0 Videos in der Warteschleife</item>
+        <item quantity="one">1 Video in der Warteschleife</item>
+        <item quantity="other">%d Videos in der Warteschleife</item>
+    </plurals>
+</resources>

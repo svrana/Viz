@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/browserRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <EditText
+        android:id="@+id/urlbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:focusable="true"
+        android:inputType="textUri"
+        android:hint="@string/urlbar_hint"
+        android:selectAllOnFocus="true">
+    </EditText>
+
+    <!-- During each web page load --> 
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/urlbar"
+        android:max="100"
+        android:visibility="invisible" />
+
+<!--
+  webview is inflated and attached manually in Browser.java
+        <requestFocus />
+-->
+
+</RelativeLayout>

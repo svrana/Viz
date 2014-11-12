@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Viz</string>
+
+    <string name="amazon_market_uri">http://www.amazon.com/gp/mas/dl/android?p=</string>
+    <string name="google_market_uri">market://details?id=</string>
+
+    <string name="local_service_started">Viz service started</string>
+
+    <string-array name="download_quality_values">
+        <item>download_quality_low</item>
+        <item>download_quality_high</item>
+    </string-array>
+
+    <string-array name="ad_position_values">
+        <item>ads_on_bottom</item>
+        <item>ads_on_top</item>
+    </string-array>
+</resources>

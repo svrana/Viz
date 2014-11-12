@@ -1,0 +1,55 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/video_preferences" >
+
+        <ListPreference android:key="download_quality"
+                        android:title="@string/download_quality_title"
+                        android:entries="@array/download_quality_options"
+                        android:entryValues="@array/download_quality_values"
+        />
+
+        <CheckBoxPreference
+                android:key="auto_resume"
+                android:title="@string/autoresume_title"
+                android:summaryOn="@string/autoresume_on_description"
+                android:summaryOff="@string/autoresume_off_description"
+                android:defaultValue="false"
+         />
+
+        <CheckBoxPreference
+            android:key="use_external_video_player"
+            android:title="@string/use_external_player_title"
+            android:defaultValue="false"
+            android:summaryOn="@string/unlock_videos_description"
+            android:summaryOff="@string/lock_videos_description" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="other_preferences"
+            android:title="@string/other_preferences" >
+
+        <CheckBoxPreference
+                android:key="share_videos"
+                android:title="@string/video_accessibility_title"
+                android:summaryOn="@string/unlock_videos_description"
+                android:summaryOff="@string/lock_videos_description"
+                android:defaultValue="false"
+        />
+
+        <com.first3.viz.ui.DownloadDirectoryDialogPreference
+                android:key="download_directory"
+                android:title="@string/download_directory_title"
+                android:defaultValue=""
+        />
+
+        <CheckBoxPreference
+                android:key="pin_locked"
+                android:title="@string/lock_screen_title"
+                android:defaultValue="false"
+                android:summaryOn="@string/lock_screen_summary_on"
+                android:summaryOff="@string/lock_screen_off_free_version"
+        />
+
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="intro_title">Viz へようこそ！</string>
+    <string name="intro_text">動画をダウンロードするには、サポートされているサイトの1つを選んでダウンロードしたい動画を選びます。ダウンロードが完了するとサムネイルが再生タブに表示され、そこで動画の再生・削除が行えるようになります。\n\n広告を非表示にするなどプレミアム機能を利用できるようにするには、設定タブで Vizプレミアムへのアップグレードを行ってください。\n\nYouTube は先方のサービス規約によりサポートされていません！</string>
+    <!-- Error shown when device does not have an sd card or it's not mounted
+         correctly and the app will not function properly -->
+    <string name="cannot_use_app">Viz が使用できません</string>
+    <string name="exit_viz">終了</string>
+    <string name="storage_error">外部ストレージが見つからない、または書き込みができません。デバイスがコンピューターに接続されていることやデバイスがサポートされていないことが原因として考えられます。</string>
+    <!-- Web browser tab -->
+    <string name="urlbar_hint">URLを入力（またはブックマークタブを使用）</string>
+    <!-- Appears in the custom search bar added for Vimeo -->
+    <string name="search">検索</string>
+    <!-- Download tab -->
+    <string name="downloads_menu_clear">非使用中メモリを解放</string>
+    <string name="downloads_clear">消去</string>
+    <string name="download_failed_accept">OK</string>
+    <string name="downloads_pauseDownload">ダウンロードを一時停止しますか？</string>
+    <string name="download_pause">一時停止</string>
+    <string name="download_continue">続行</string>
+    <string name="downloads_completeOptions">動画</string>
+    <string name="downloads_remove">削除</string>
+    <string name="downloads_remove_cancel">キャンセル</string>
+    <string name="downloads_resume_ok">ダウンロード再開</string>
+    <string name="downloads_empty">ダウンロード中のファイルはありません</string>
+    <string name="download_cancelled">キャンセルしました</string>
+    <string name="download_error_content_length">Content-Length ヘッダを取得できませんでした</string>
+    <string name="download_error_nofreespace">ダウンロードディレクトリに十分な空き容量がありません。要求されたファイルは%1$sMB で、空き容量は%2$sMB です。</string>
+    <string name="download_remove">削除</string>
+    <string name="download_play">再生</string>
+    <string name="download_cancel">ダウンロードを中止</string>
+    <string name="download_failed">ダウンロードに失敗しました</string>
+    <!-- Download dialog -->
+    <string name="savedialog_ok">ダウンロード</string>
+    <string name="savedialog_cancel">キャンセル</string>
+    <string name="savedialog_saveas">保存するファイル名：</string>
+    <string name="directorydialog_name">名前： </string>
+    <string name="directorydialog_ok">作成</string>
+    <string name="directorydialog_cancel">キャンセル</string>
+    <string name="file_exists_error">ファイルは既に存在します。他の名前を付けてください。</string>
+    <string name="invalid_filename">無効なファイル名です。</string>
+    <string name="file_exists_tryagain">ファイルは既に存在します。他の名前を付けてください。</string>
+    <string name="directory_access_error">ダウンロードディレクトリにアクセスできませんでした。デバイスがコンピューターに接続されているか確認してください。</string>
+    <string name="database_access_error">ダウンロードファイルをデータベースに追加できません</string>
+    <!-- Play videos tab -->
+    <string name="filemanager_empty">動画がここに表示されます</string>
+    <string name="filemanagerdialog_deletefile">動画を削除しますか？</string>
+    <string name="filemanager_thumbnail_contentDescription">動画のサムネイル</string>
+    <string name="filemanager_delete_menuitem">削除</string>
+    <string name="filemanager_unlock_menuitem">ギャラリーへ移動</string>
+    <string name="filemanager_unlock_dialog">ギャラリーへ移動しますか？</string>
+    <string name="filemanager_video_freed">動画はギャラリー内から再生できるようになっています</string>
+    <string name="filemanager_video_unlock_error">この動画はすでにギャラリーへ移動済みです</string>
+    <string name="filemanager_failed_sharingvideo_general">動画の共有に失敗しました</string>
+    <string name="filemanager_cancelled_sharing">キャンセルしました</string>
+    <string name="filemanager_video_options">動画オプション</string>
+    <string name="premium_upgrade_hook">プレミアム機能により動画をギャラリーに移動できます。Viz プレミアムにアップグレードしませんか？</string>
+    <!-- Favorites/Bookmarks tab -->
+    <string name="favorites_favoriteremoved">お気に入りから削除</string>
+    <string name="favorites_added">お気に入りに追加済み</string>
+    <!-- Playing Video -->
+    <string name="videoplayer_resumeplaying">再生</string>
+    <string name="videoplayer_noresume">再起動</string>
+    <string name="resuming_from_position">途中から再生中</string>
+    <!-- Preference related strings -->
+    <string name="billing_rate_viz">Viz v%1$sを評価　</string>
+    <string name="billing_support_viz">サポートViz</string>
+    <string name="billing_purchase">Viz プレミアムにアップグレード！</string>
+    <string name="billing_viz_purchased">ご協力ありがとうございます！</string>
+    <string name="amazon_store_notfound">Amazon アプリストアが見つかりません</string>
+    <string name="google_store_notfound">Google Play が見つかりません</string>
+    <string name="video_accessibility">動画リストの公開について</string>
+    <string name="va_description">毎回のダウンロード後、デバイス上のメディアコレクションに新しい動画が自動追加されます。これによりサードパーティーアプリがお持ちのコンテンツを閲覧・管理できるようになります。これが作動しないように、動画を長押し後、ロック解除のアイコンを選択して、動画タブからロックを外したい動画を選ぶこともできます。</string>
+    <string name="default_directory_substitute">デフォルト設定：アップグレードで変更可能です</string>
+    <string name="upgrade_to_premium_dialog_title">Viz プレミアムにアップグレード</string>
+    <string name="upgrade_to_premium_dialog_description">Viz プレミアムを購入するとこんなに便利に：\n \n\t広告が非表示に\n\tギャラリーに動画を追加\n\tViz 以外で動画を再生\n\tダウンロードディレクトリを変更\n\tPINコードで Viz をロック\n\tViz 開発サポート</string>
+    <string name="upgrade_to_premium_launch_google_play">Google Play へ進む</string>
+    <!-- Video related preferences -->
+    <string name="video_preferences">動画の設定</string>
+    <string name="download_quality_high_preference">高画質：ダウンロードに時間がかかります</string>
+    <string name="download_quality_low_preference">低画質：ダウンロードが早く終了します</string>
+    <string name="download_quality_title">画質</string>
+    <!-- The title -->
+    <string name="browser_preferences">起動するブラウザ</string>
+    <string name="preference_homepage_title">起動ホームページ</string>
+    <string name="preference_homepage_summary">デフォルトで組み込まれたページを設定</string>
+    <string name="preference_homepage_dialogTitle">Viz をブラウザのホームページに設定</string>
+    <!-- As seen in the free version -->
+    <string name="locked_preferences">プレミアム機能</string>
+    <!-- As seen in the supported/pro version -->
+    <string name="unlocked_preferences">プレミアム機能</string>
+    <string name="video_accessibility_title">ギャラリーで動画を再生</string>
+    <string name="download_directory_title">ダウンロード先</string>
+    <!-- Download Directory selection info -->
+    <string name="download_directory_chooser">現在のダウンロードディレクトリ</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="reset">リセット</string>
+    <!-- Lock/Unlock (add videos to phone Gallery) -->
+    <string name="unlock_videos_description">有効</string>
+    <string name="lock_videos_description">無効</string>
+    <string name="lock_videos_free_version_description">使用できません：アップグレードで利用可能です</string>
+    <!-- Lock screen (with PIN access) -->
+    <string name="lock_screen_title">PINセキュリティを有効化</string>
+    <string name="pin_select_title">PINアクセスコードを設定</string>
+    <string name="lock_screen_summary_on">Viz の使用に PIN が必要になります</string>
+    <string name="lock_screen_summary_off">PIN は必要ありません</string>
+    <string name="lock_screen_off_free_version">使用できません：アップグレードで利用可能です</string>
+    <string name="enter_new_pin">新しい PIN を入力</string>
+    <string name="confirm_pin">新しい PIN を確定</string>
+    <string name="enter_pin">PIN を入力</string>
+    <string name="delete_pin">削除</string>
+    <string name="cancel_pin">キャンセル</string>
+    <string name="pin_enabled">PIN が有効になりました！</string>
+    <string name="pin_not_confirmed">PIN が確認できません！</string>
+    <string name="pin_incorrect">不正な PINナンバーです。</string>
+    <!-- Use a third party video player instead of the built-in video player
+         to play videos -->
+    <string name="use_external_player_title">ほかの動画プレーヤーを使用</string>
+    <!-- Playback related preferences -->
+    <string name="autoresume_title">再生オプション</string>
+    <string name="autoresume_on_description">確認を行わず再生開始します</string>
+    <string name="autoresume_off_description">再生前に確認します</string>
+    <!-- Changing the position of the banner ads -->
+    <string name="ad_position_title">広告の表示場所</string>
+    <string name="ads_on_bottom_preference">画面下に広告を表示</string>
+    <string name="ads_on_top_preference">画面上に広告を表示</string>
+    <string-array name="download_quality_options">
+        <item>@string/download_quality_low_preference</item>
+        <item>@string/download_quality_high_preference</item>
+    </string-array>
+    <string-array name="ad_position_options">
+        <item>@string/ads_on_bottom_preference</item>
+        <item>@string/ads_on_top_preference</item>
+    </string-array>
+    <!-- Download Notification -->
+    <plurals name="notification_title_numvideos">
+        <item quantity="zero">0本の動画をダウンロード中</item>
+        <item quantity="other">%d本の動画をダウンロード中</item>
+    </plurals>
+    <!-- Appears in the notification when there are more than 4 active downloads -->
+    <plurals name="notification_subtitle_numqueued">
+        <item quantity="zero">0本の動画をダウンロード待ち</item>
+        <item quantity="other">%d 本の動画をダウンロード待ち</item>
+    </plurals>
+</resources>

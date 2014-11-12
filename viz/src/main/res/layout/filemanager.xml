@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/filemanager"
+       	android:layout_width="match_parent"
+      	android:layout_height="match_parent"
+        >
+
+    <GridView 
+        android:id="@+id/filesList"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:columnWidth="250dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+    />
+
+    <TextView
+         android:id="@android:id/empty"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center"
+         android:text="@string/filemanager_empty" />
+
+</RelativeLayout>

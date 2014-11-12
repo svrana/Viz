@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation" >
+    <string name="intro_title">Welcome to Viz!</string>
+    <string name="intro_text">To download videos, select on one of the supported sites. Select the video you would like to download. After the download is complete, a thumbnail will appear in the Play tab where the video can be played or removed.</string>
+    <!-- Error shown when device does not have an sd card or it's not mounted
+         correctly and the app will not function properly -->
+    <string name="cannot_use_app">Viz not usable</string>
+    <string name="exit_viz">Exit</string>
+    <string name="storage_error">External storage not found or not writable. This could happen if your device is connected to a computer or if your device is not supported.</string>
+    <!-- Web browser tab -->
+    <string name="urlbar_hint">Type URL (or use the bookmarks tab)</string>
+    <!-- Appears in the custom search bar added for Vimeo -->
+    <string name="search">Search</string>
+    <!-- Download tab -->
+    <string name="downloads_menu_clear">Clear inactive</string>
+    <string name="downloads_clear">clear</string>
+    <string name="download_failed_accept">Ok</string>
+    <string name="downloads_pauseDownload">Pause download?</string>
+    <string name="download_pause">Pause</string>
+    <string name="download_continue">Continue</string>
+    <string name="downloads_completeOptions">Video</string>
+    <string name="downloads_remove">Remove</string>
+    <string name="downloads_remove_cancel">Cancel</string>
+    <string name="downloads_resume_ok">Resume download</string>
+    <string name="downloads_empty">No current downloads</string>
+    <string name="download_cancelled">Cancelled</string>
+    <string name="download_error_content_length">Could not get content length</string>
+    <string name="download_error_nofreespace">Not enough free space in download directory. Requested file is %1$sMB, %2$sMB available</string>
+    <string name="download_remove">Remove</string>
+    <string name="download_play">Play</string>
+    <string name="download_cancel">Cancel download</string>
+    <string name="download_failed">Download failed</string>
+    <!-- Download dialog -->
+    <string name="savedialog_ok">Download</string>
+    <string name="savedialog_cancel">Cancel</string>
+    <string name="savedialog_saveas">Save as:</string>
+    <string name="directorydialog_name">Name: </string>
+    <string name="directorydialog_ok">Create</string>
+    <string name="directorydialog_cancel">Cancel</string>
+    <string name="file_exists_error">File already exists. Pick another filename.</string>
+    <string name="invalid_filename">Invalid filename.</string>
+    <string name="file_exists_tryagain">File already exists. Pick another filename.</string>
+    <string name="directory_access_error">Could not access download directory. Is your device connected to your computer?</string>
+    <string name="database_access_error">Error adding download to database</string>
+    <!-- Play videos tab -->
+    <string name="filemanager_empty">Videos will appear here</string>
+    <string name="filemanagerdialog_deletefile">Remove Video?</string>
+    <string name="filemanager_thumbnail_contentDescription">Video thumbnail</string>
+    <string name="filemanager_delete_menuitem">Remove</string>
+    <string name="filemanager_unlock_menuitem">Move to Gallery</string>
+    <string name="filemanager_unlock_dialog">Move to Gallery?</string>
+    <string name="filemanager_video_freed">Video should be visible from within the Gallery</string>
+    <string name="filemanager_video_unlock_error">This video has already been moved to the Gallery</string>
+    <string name="filemanager_failed_sharingvideo_general">Failed to share video</string>
+    <string name="filemanager_cancelled_sharing">Cancelled</string>
+    <string name="filemanager_video_options">Video options</string>
+    <!-- Favorites/Bookmarks tab -->
+    <string name="favorites_favoriteremoved">removed from Favorites</string>
+    <string name="favorites_added">added to favorites</string>
+    <!-- Playing Video -->
+    <string name="videoplayer_resumeplaying">Resume</string>
+    <string name="videoplayer_noresume">Restart</string>
+    <string name="resuming_from_position">Resuming from position</string>
+    <!-- Preference related strings -->
+    <string name="video_accessibility">Video Visibility</string>
+    <string name="va_description">After each download, the new video will be automatically added to the Media collection on your device. This will allow 3rd party applications to view and manage your content. Alternatively, you can select the videos you would like to unlock from the Videos tab, by long-pressing the video and selecting the unlock icon.</string>
+    <!-- Video related preferences -->
+    <string name="video_preferences">Video preferences</string>
+    <string name="download_quality_high_preference">Higher quality, longer download</string>
+    <string name="download_quality_low_preference">Lower quality, faster download</string>
+    <string name="download_quality_title">Video quality</string>
+    <!-- The title -->
+    <string name="other_preferences">Other Features</string>
+    <string name="video_accessibility_title">Show videos in Gallery</string>
+    <string name="download_directory_title">Download location</string>
+    <!-- Download Directory selection info -->
+    <string name="download_directory_chooser">Current Download Directory</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
+    <!-- Lock/Unlock (add videos to phone Gallery) -->
+    <string name="unlock_videos_description">Enabled</string>
+    <string name="lock_videos_description">Disabled</string>
+    <!-- Lock screen (with PIN access) -->
+    <string name="lock_screen_title">Enable PIN security</string>
+    <string name="pin_select_title">Set PIN access code</string>
+    <string name="lock_screen_summary_on">PIN will be required to use Viz</string>
+    <string name="lock_screen_summary_off">No PIN is required</string>
+    <string name="enter_new_pin">Enter new PIN</string>
+    <string name="confirm_pin">Confirm new PIN</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="delete_pin">Delete</string>
+    <string name="cancel_pin">Cancel</string>
+    <string name="pin_enabled">PIN enabled!</string>
+    <string name="pin_not_confirmed">PIN was not confirmed!</string>
+    <string name="pin_incorrect">Wrong PIN number.</string>
+    <!-- Use a third party video player instead of the built-in video player
+         to play videos -->
+    <string name="use_external_player_title">Use other video player</string>
+    <!-- Playback related preferences -->
+    <string name="autoresume_title">Playback options</string>
+    <string name="autoresume_on_description">Resume playback without prompting</string>
+    <string name="autoresume_off_description">Prompt before each resume</string>
+    <string-array name="download_quality_options">
+        <item>@string/download_quality_low_preference</item>
+        <item>@string/download_quality_high_preference</item>
+    </string-array>
+    <!-- Download Notification -->
+    <plurals name="notification_title_numvideos">
+        <item quantity="zero">Downloading 0 videos</item>
+        <item quantity="one">Downloading 1 video</item>
+        <item quantity="other">Downloading %d videos</item>
+    </plurals>
+    <!-- Appears in the notification when there are more than 4 active downloads -->
+    <plurals name="notification_subtitle_numqueued">
+        <item quantity="zero">0 videos queued</item>
+        <item quantity="one">1 video queued</item>
+        <item quantity="other">%d videos queued</item>
+    </plurals>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/favicon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="2dp"
+        android:contentDescription="favicon"
+        android:gravity="center|left" />
+
+    <TextView
+        android:id="@+id/favorite_name"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/favicon"
+        android:text="Really long provider"
+        style="@style/ListHeader"
+        android:gravity="center|left" />
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/savefile"
+    android:layout_width="400dp"
+    android:layout_height="500dp" >
+
+    <TextView
+        android:id="@+id/savefile_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:text="Default Download Description"
+        android:ellipsize="end"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/savefile_saveas"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/savefile_title"
+        android:text="@string/savedialog_saveas"
+        android:textSize="@dimen/text_size_medium" />
+
+ 
+    <EditText
+        android:id="@+id/savefile_filename"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/savefile_saveas"
+        android:paddingTop="5dp"
+        android:text="defaultfilename.mp4" 
+        android:inputType="textNoSuggestions"
+        android:textSize="@dimen/text_size_medium" >
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>

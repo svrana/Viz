@@ -1,0 +1,7 @@
+local.properties
+viz/build
+viz/*.iml
+build
+.gradle
+.idea
+*.iml

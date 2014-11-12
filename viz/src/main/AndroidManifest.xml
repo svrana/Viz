@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.first3.viz"
+    android:versionCode="57"
+    android:versionName="0.9.4" >
+
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:name="VizApp">
+
+    <service
+        android:name="com.first3.viz.download.DownloadManager"
+        android:exported="false"/>
+
+        <activity
+            android:name=".ui.ActivityDelegate"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Sherlock.Viz"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:authorities="com.first3.viz"
+            android:exported="true"
+            android:name="com.first3.viz.provider.VizProvider" >
+        </provider>
+    </application>
+</manifest>
