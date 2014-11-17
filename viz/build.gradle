@@ -18,6 +18,15 @@ android {
     }
 }
 
+repositories {
+    // Pull in the android support library. Make sure you have installed
+    // the 'Android Support Repository' included in the 'Extras' section
+    // of the Android SDK Manager
+    maven {
+        url new File(android.sdkDirectory, "extras/android/m2repository")
+    }
+}
+
 dependencies {
     compile 'com.android.support:support-v4:19.1.0'
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
