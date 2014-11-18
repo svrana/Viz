@@ -1,6 +1,6 @@
-# Viz - Video downloader App for Android
+# Viz - Video downloader App for Android  ![Build Status][1]
 
-![Viz logo][1]
+![Viz logo][2]
 
 ## About
 
@@ -21,16 +21,15 @@ environment variable to the location of your SDK:
 export ANDROID_HOME=/opt/tools/android-sdk
 ```
 
-The build also requires the Android Support Library, revision 19. Installation
-directions for the support library are
-[here](http://developer.android.com/tools/support-library/setup.html).
+The build also requires the Android Support Library, revision 19. Make sure
+you have selected the 'Android Support Library' from the 'Extras' section of
+the Android SDK Manager.
 
 After satisfying those requirements, the build is pretty simple:
 
 * Run `./gradlew assembleDebug`
 
 The resulting .apk files will be located in the viz/build/outputs directory.
-
 You might find that your device doesn't let you install your build if you
 already have the (now defunct) version of Viz from Google Play installed.
 This is standard Android security as it it won't let you directly replace an
@@ -47,4 +46,5 @@ Please fork this repository and contribute back using
 Any contributions, large or small, major features, bug fixes, additional
 language translations, unit/integration tests are welcomed and appreciated.
 
-[1]: http://vranix.com/viz_video_downloader_logo_21.png
+[1]: https://api.travis-ci.org/svrana/Viz.svg?branch=master
+[2]: http://vranix.com/viz_video_downloader_logo_21.png
