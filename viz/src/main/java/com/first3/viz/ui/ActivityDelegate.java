@@ -30,15 +30,16 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import com.first3.viz.BuildConfig;
 import com.first3.viz.Constants;
 import com.first3.viz.Preferences;
@@ -53,14 +54,14 @@ import com.first3.viz.ui.Downloads;
 import com.first3.viz.ui.PinSelectorDialogFragment;
 import com.first3.viz.ui.PinSelectorDialogFragment.DismissPinDialogListener;
 import com.first3.viz.ui.PreferenceListFragment;
-import com.first3.viz.utils.FragmentActivityParent;
+import com.first3.viz.utils.ActivityParent;
 import com.first3.viz.utils.ImageUtilities;
 import com.first3.viz.utils.Log;
 import com.first3.viz.utils.TabsAdapter;
 import com.first3.viz.utils.Utils;
 import com.first3.viz.utils.VizUtils;
 
-public class ActivityDelegate extends FragmentActivityParent implements
+public class ActivityDelegate extends ActivityParent implements
         DismissPinDialogListener, VersionChangeNotifier.Listener {
     private ViewPager mViewPager;
     private TabsAdapter mTabsAdapter;
@@ -117,10 +118,11 @@ public class ActivityDelegate extends FragmentActivityParent implements
             Log.d("Viz running in debug mode");
         }
 
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.main);
         Log.d();
 
-        mActionBar = getSupportActionBar();
+        mActionBar = this.getActionBar();
         mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         mActionBar.setDisplayShowTitleEnabled(true);
         mActionBar.setDisplayShowHomeEnabled(true);
@@ -246,7 +248,7 @@ public class ActivityDelegate extends FragmentActivityParent implements
     protected void onPause() {
         Log.d();
         SharedPreferences.Editor ed = VizApp.getPrefs().edit();
-        ed.putInt(Preferences.CURRENT_TAB, getSupportActionBar()
+        ed.putInt(Preferences.CURRENT_TAB, getActionBar()
                 .getSelectedNavigationIndex());
         ed.putInt(Preferences.CURRENT_MODE, mCurrentMode.ordinal());
         if (mCurrentMode == Mode.VIDEO) {
@@ -268,7 +270,7 @@ public class ActivityDelegate extends FragmentActivityParent implements
 
     public void onBackPressed() {
         if (mCurrentMode == Mode.CONTROL) {
-            int current = getSupportActionBar().getSelectedNavigationIndex();
+            int current = getActionBar().getSelectedNavigationIndex();
             Log.d("Back button pressed in control mode.  Selected page: " + current);
             if (isCurrentTabBrowser()) {
                 getBrowserFragment().goBack();
@@ -284,7 +286,7 @@ public class ActivityDelegate extends FragmentActivityParent implements
     }
 
     private boolean isCurrentTab(Tab tab) {
-        return (getSupportActionBar().getSelectedNavigationIndex() == tab.getPosition());
+        return (getActionBar().getSelectedNavigationIndex() == tab.getPosition());
     }
 
     public boolean isCurrentTabBrowser() {
@@ -324,23 +326,23 @@ public class ActivityDelegate extends FragmentActivityParent implements
         switch (name) {
         case BROWSER:
             String browserTag = mTabsAdapter.getFragmentName(mBrowserTab);
-            return getSupportFragmentManager().findFragmentByTag(browserTag);
+            return getFragmentManager().findFragmentByTag(browserTag);
         case DOWNLOADS:
             return mTabsAdapter.getFragForTab(mDownloadsTab);
         case FAVORITES:
             String favoritesTag = mTabsAdapter.getFragmentName(mFavoritesTab);
-            return getSupportFragmentManager().findFragmentByTag(favoritesTag);
+            return getFragmentManager().findFragmentByTag(favoritesTag);
         case FILEMANAGER:
             String fileManagerTag = mTabsAdapter
                     .getFragmentName(mFileManagerTab);
-            return getSupportFragmentManager()
+            return getFragmentManager()
                     .findFragmentByTag(fileManagerTag);
         case VIDEOPLAYER:
-            return getSupportFragmentManager().findFragmentById(
+            return getFragmentManager().findFragmentById(
                     R.id.videoplayer);
         case SETTINGS:
             String settingsTag = mTabsAdapter.getFragmentName(mSettingsTab);
-            return getSupportFragmentManager().findFragmentByTag(settingsTag);
+            return getFragmentManager().findFragmentByTag(settingsTag);
         default:
             return null;
         }
@@ -375,7 +377,7 @@ public class ActivityDelegate extends FragmentActivityParent implements
     }
 
     public Favorites getFavoritesFragment() {
-        if (mFavorites == null) {
+        if (null == mFavorites) {
             mFavorites = (Favorites) getFragment(FragmentName.FAVORITES);
         }
         return mFavorites;
@@ -515,7 +517,7 @@ public class ActivityDelegate extends FragmentActivityParent implements
                 pinSelectorDialogFragment = PinSelectorDialogFragment
                         .newInstance(getString(R.string.enter_pin), false);
                 pinSelectorDialogFragment.registerDialogDismissedListener(this);
-                pinSelectorDialogFragment.show(getSupportFragmentManager(),
+                pinSelectorDialogFragment.show(getFragmentManager(),
                         PinSelectorDialogFragment.PIN_SELECTOR_DIALOG_TAG);
             }
         } else {

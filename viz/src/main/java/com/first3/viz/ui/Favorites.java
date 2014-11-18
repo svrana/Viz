@@ -19,18 +19,17 @@
 
 package com.first3.viz.ui;
 
-import com.actionbarsherlock.app.SherlockListFragment;
+import android.app.ListFragment;
 
 import com.first3.viz.R;
 import com.first3.viz.provider.VizContract;
 import com.first3.viz.provider.VizContract.FavoritesColumns;
 
-import com.actionbarsherlock.view.ActionMode;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.first3.viz.utils.Log;
-
 import android.database.Cursor;
 
 import android.graphics.Bitmap;
@@ -39,13 +38,13 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import android.provider.BaseColumns;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v4.widget.CursorAdapter;
+import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.widget.CursorAdapter;
 
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
-import android.support.v4.widget.SimpleCursorAdapter;
+import android.widget.SimpleCursorAdapter.ViewBinder;
+import android.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +55,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Favorites extends SherlockListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
+public class Favorites extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int LOADER_ID = 1;
     private SimpleCursorAdapter mAdapter;
 
@@ -91,7 +90,7 @@ public class Favorites extends SherlockListFragment implements LoaderManager.Loa
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view,
                     int position, long id) {
-                getSherlockActivity().startActionMode(new FavoritesActionMode(position, id));
+                getActivity().startActionMode(new FavoritesActionMode(position, id));
                 return true;
             }
         });

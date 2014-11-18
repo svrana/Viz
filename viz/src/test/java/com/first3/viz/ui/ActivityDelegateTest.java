@@ -13,12 +13,9 @@ import static org.junit.Assert.assertTrue;
 @Config(emulateSdk = 18, manifest = "./src/main/AndroidManifest.xml")
 @RunWith(RobolectricTestRunner.class)
 public class ActivityDelegateTest {
-    /*
-     * Dummy test for now
-     */
     @Test
-    public void testNothing() throws Exception {
-        // Activity activity = Robolectric.buildActivity(ActivityDelegate.class).create().get();
-        assertTrue(true);
+    public void testActivityDelegate() throws Exception {
+        //Activity activity = Robolectric.buildActivity(ActivityDelegate.class).create().get();
+        //assertTrue(true);
     }
 }

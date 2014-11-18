@@ -41,12 +41,12 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.provider.BaseColumns;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v4.widget.CursorAdapter;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
-import android.support.v4.widget.SimpleCursorAdapter;
+import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.widget.CursorAdapter;
+import android.widget.SimpleCursorAdapter.ViewBinder;
+import android.widget.SimpleCursorAdapter;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,9 +56,9 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.first3.viz.R;
 import com.first3.viz.VizApp;
@@ -484,7 +484,7 @@ public class Downloads extends FragmentParent implements ServiceConnection,
     }
 
     private void clearButtonUpdateState() {
-        boolean enabled = (mAdapter != null) ? (mAdapter.getCount() > 0) : false;
+        boolean enabled = (mAdapter != null) && (mAdapter.getCount() > 0);
         Log.d("(enabled=" + enabled + ")");
 
         // TODO: this should only be enabled there are non active downloads present

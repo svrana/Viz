@@ -24,7 +24,7 @@ import com.first3.viz.R;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+import android.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;

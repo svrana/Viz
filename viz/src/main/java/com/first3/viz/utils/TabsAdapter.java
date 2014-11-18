@@ -22,18 +22,18 @@ package com.first3.viz.utils;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.app.FragmentTransaction;
+import android.app.Fragment;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.Fragment;
 
 /**
  * This is a helper class that implements the management of tabs and all
@@ -54,8 +54,8 @@ public class TabsAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
     private final ArrayList<Bundle> mArgs = new ArrayList<Bundle>();
     private final HashMap<ActionBar.Tab, Fragment> mFragments = Maps.newHashMap();
 
-    public TabsAdapter(SherlockFragmentActivity activity, ActionBar actionBar, ViewPager pager) {
-        super(activity.getSupportFragmentManager());
+    public TabsAdapter(Activity activity, ActionBar actionBar, ViewPager pager) {
+        super(activity.getFragmentManager());
         mContext = activity;
         mActionBar = actionBar;
         mViewPager = pager;
@@ -73,7 +73,7 @@ public class TabsAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
         mArgs.add(args);
         mActionBar.addTab(tab.setTabListener(this));
 
-        Fragment frag = SherlockFragment.instantiate(mContext, clss.getName(), args);
+        Fragment frag = Fragment.instantiate(mContext, clss.getName(), args);
         mFragments.put(tab, frag);
 
         notifyDataSetChanged();
@@ -139,4 +139,3 @@ public class TabsAdapter extends FragmentPagerAdapter implements ViewPager.OnPag
         public void onTabUnselected(ActionBar actionBar);
     }
 }
-
