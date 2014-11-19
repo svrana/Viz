@@ -13,19 +13,13 @@ video playback, download resume support and more.
 
 ## Building
 
-The build requires [Gradle](http://gradle.org/downloads) and the [Android SDK](http://developer.android.com/sdk/index.html) to be installed in your
-development environment. In addition you'll need to set the `ANDROID_HOME`
-environment variable to the location of your SDK:
+The build requires [Gradle](http://gradle.org/downloads). Viz uses
+the [sdk-manager-plugin](http://github.com/JakeWharton/sdk-manager-plugin)
+to manage the Android dependencies for you; if you do not have the required
+Android SDK and support libraries installed, they will be downloaded the
+first time you run the build.
 
-```bash
-export ANDROID_HOME=/opt/tools/android-sdk
-```
-
-The build also requires the Android Support Library, revision 19. Make sure
-you have selected the 'Android Support Library' from the 'Extras' section of
-the Android SDK Manager.
-
-After satisfying those requirements, the build is pretty simple:
+After installing gradle,
 
 * Run `./gradlew assembleDebug`
 
