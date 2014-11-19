@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="intro_title">Viz へようこそ！</string>
     <string name="intro_text">動画をダウンロードするには、サポートされているサイトの1つを選んでダウンロードしたい動画を選びます。ダウンロードが完了するとサムネイルが再生タブに表示され、そこで動画の再生・削除が行えるようになります。\n\n広告を非表示にするなどプレミアム機能を利用できるようにするには、設定タブで Vizプレミアムへのアップグレードを行ってください。\n\nYouTube は先方のサービス規約によりサポートされていません！</string>
     <!-- Error shown when device does not have an sd card or it's not mounted
@@ -54,7 +54,6 @@
     <string name="filemanager_failed_sharingvideo_general">動画の共有に失敗しました</string>
     <string name="filemanager_cancelled_sharing">キャンセルしました</string>
     <string name="filemanager_video_options">動画オプション</string>
-    <string name="premium_upgrade_hook">プレミアム機能により動画をギャラリーに移動できます。Viz プレミアムにアップグレードしませんか？</string>
     <!-- Favorites/Bookmarks tab -->
     <string name="favorites_favoriteremoved">お気に入りから削除</string>
     <string name="favorites_added">お気に入りに追加済み</string>
@@ -63,32 +62,13 @@
     <string name="videoplayer_noresume">再起動</string>
     <string name="resuming_from_position">途中から再生中</string>
     <!-- Preference related strings -->
-    <string name="billing_rate_viz">Viz v%1$sを評価　</string>
-    <string name="billing_support_viz">サポートViz</string>
-    <string name="billing_purchase">Viz プレミアムにアップグレード！</string>
-    <string name="billing_viz_purchased">ご協力ありがとうございます！</string>
-    <string name="amazon_store_notfound">Amazon アプリストアが見つかりません</string>
-    <string name="google_store_notfound">Google Play が見つかりません</string>
     <string name="video_accessibility">動画リストの公開について</string>
     <string name="va_description">毎回のダウンロード後、デバイス上のメディアコレクションに新しい動画が自動追加されます。これによりサードパーティーアプリがお持ちのコンテンツを閲覧・管理できるようになります。これが作動しないように、動画を長押し後、ロック解除のアイコンを選択して、動画タブからロックを外したい動画を選ぶこともできます。</string>
-    <string name="default_directory_substitute">デフォルト設定：アップグレードで変更可能です</string>
-    <string name="upgrade_to_premium_dialog_title">Viz プレミアムにアップグレード</string>
-    <string name="upgrade_to_premium_dialog_description">Viz プレミアムを購入するとこんなに便利に：\n \n\t広告が非表示に\n\tギャラリーに動画を追加\n\tViz 以外で動画を再生\n\tダウンロードディレクトリを変更\n\tPINコードで Viz をロック\n\tViz 開発サポート</string>
-    <string name="upgrade_to_premium_launch_google_play">Google Play へ進む</string>
     <!-- Video related preferences -->
     <string name="video_preferences">動画の設定</string>
     <string name="download_quality_high_preference">高画質：ダウンロードに時間がかかります</string>
     <string name="download_quality_low_preference">低画質：ダウンロードが早く終了します</string>
     <string name="download_quality_title">画質</string>
-    <!-- The title -->
-    <string name="browser_preferences">起動するブラウザ</string>
-    <string name="preference_homepage_title">起動ホームページ</string>
-    <string name="preference_homepage_summary">デフォルトで組み込まれたページを設定</string>
-    <string name="preference_homepage_dialogTitle">Viz をブラウザのホームページに設定</string>
-    <!-- As seen in the free version -->
-    <string name="locked_preferences">プレミアム機能</string>
-    <!-- As seen in the supported/pro version -->
-    <string name="unlocked_preferences">プレミアム機能</string>
     <string name="video_accessibility_title">ギャラリーで動画を再生</string>
     <string name="download_directory_title">ダウンロード先</string>
     <!-- Download Directory selection info -->
@@ -99,13 +79,11 @@
     <!-- Lock/Unlock (add videos to phone Gallery) -->
     <string name="unlock_videos_description">有効</string>
     <string name="lock_videos_description">無効</string>
-    <string name="lock_videos_free_version_description">使用できません：アップグレードで利用可能です</string>
     <!-- Lock screen (with PIN access) -->
     <string name="lock_screen_title">PINセキュリティを有効化</string>
     <string name="pin_select_title">PINアクセスコードを設定</string>
     <string name="lock_screen_summary_on">Viz の使用に PIN が必要になります</string>
     <string name="lock_screen_summary_off">PIN は必要ありません</string>
-    <string name="lock_screen_off_free_version">使用できません：アップグレードで利用可能です</string>
     <string name="enter_new_pin">新しい PIN を入力</string>
     <string name="confirm_pin">新しい PIN を確定</string>
     <string name="enter_pin">PIN を入力</string>
@@ -121,17 +99,9 @@
     <string name="autoresume_title">再生オプション</string>
     <string name="autoresume_on_description">確認を行わず再生開始します</string>
     <string name="autoresume_off_description">再生前に確認します</string>
-    <!-- Changing the position of the banner ads -->
-    <string name="ad_position_title">広告の表示場所</string>
-    <string name="ads_on_bottom_preference">画面下に広告を表示</string>
-    <string name="ads_on_top_preference">画面上に広告を表示</string>
     <string-array name="download_quality_options">
         <item>@string/download_quality_low_preference</item>
         <item>@string/download_quality_high_preference</item>
-    </string-array>
-    <string-array name="ad_position_options">
-        <item>@string/ads_on_bottom_preference</item>
-        <item>@string/ads_on_top_preference</item>
     </string-array>
     <!-- Download Notification -->
     <plurals name="notification_title_numvideos">

@@ -48,7 +48,7 @@
                 android:title="@string/lock_screen_title"
                 android:defaultValue="false"
                 android:summaryOn="@string/lock_screen_summary_on"
-                android:summaryOff="@string/lock_screen_off_free_version"
+                android:summaryOff="@string/lock_screen_summary_off"
         />
 
     </PreferenceCategory>

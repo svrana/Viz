@@ -1,0 +1,17 @@
+api_key: 7eef1e8ed1c9506124c131968f306b483b0e6775
+
+# Optional: locales not to sync with WebTranslateIt.
+# Takes a string, a symbol, or an array of string or symbol.
+# More information here: https://github.com/AtelierConvivialite/webtranslateit/wiki
+# ignore_locales: 'en'
+
+# Or if you prefer a list of locales to sync with WebTranslateIt:
+# needed_locales: ["hu-HU", "ko-KR", "ja-JP", "es", "en", "de", "fr"]
+
+# Optional
+# before_pull: "echo 'some unix command'"   # Command executed before pulling files
+# after_pull:  "touch tmp/restart.txt"      # Command executed after pulling files
+#
+# before_push: "echo 'some unix command'"   # Command executed before pushing files
+# after_push:  "touch tmp/restart.txt"      # Command executed after pushing files
+

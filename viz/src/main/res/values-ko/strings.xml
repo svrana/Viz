@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="intro_title">Viz를 사용해 주셔서 고맙습니다!</string>
     <string name="intro_text">비디오를 다운로드하려면 지원하는 웹사이트에서 선택하십시오. 다운로드하고 싶은 비디오를 선택합니다. 다운로드를 완료한 다음에 썸네일이 비디오를 재생하거나 제거할 수 있는 재생 탭에 나타납니다.\n\n광고를 제거하거나 Premium 기능을 켜려면 설정에서 Viz Premium으로 업그레이드하세요.\n\nYoutube는 해당 이용약관 때문에 지원하지 않습니다!</string>
     <!-- Error shown when device does not have an sd card or it's not mounted
@@ -54,7 +54,6 @@
     <string name="filemanager_failed_sharingvideo_general">비디오를 공유할 수 없었음</string>
     <string name="filemanager_cancelled_sharing">취소함</string>
     <string name="filemanager_video_options">비디오 옵션</string>
-    <string name="premium_upgrade_hook">갤러리로 비디오를 옮기는 것은 Premium 기능입니다. Viz Premium으로 업그레이드하세요!</string>
     <!-- Favorites/Bookmarks tab -->
     <string name="favorites_favoriteremoved">즐겨찾기에서 제거함</string>
     <string name="favorites_added">즐겨찾기에 추가함</string>
@@ -63,32 +62,13 @@
     <string name="videoplayer_noresume">다시 시작</string>
     <string name="resuming_from_position">위치에서 이어서 함</string>
     <!-- Preference related strings -->
-    <string name="billing_rate_viz">Viz v%1$s의 평점을 매겨주세요</string>
-    <string name="billing_support_viz">Viz 지원하기</string>
-    <string name="billing_purchase">Viz Premium으로 업그레이드하기!</string>
-    <string name="billing_viz_purchased">지원해 주셔서 고맙습니다!</string>
-    <string name="amazon_store_notfound">Amazon 앱스토어를 찾을 수 없음</string>
-    <string name="google_store_notfound">Google Play를 찾을 수 없음</string>
     <string name="video_accessibility">비디오 가시성</string>
     <string name="va_description">각 다운로드 후에 새 비디오가 기기의 미디어 컬렉션에 추가됩니다. 이를 통해 제3자 애플리케이션이 콘텐츠를 보고 관리할 수 있습니다. 또는 비디오를 오래 누르고 잠금 해제 아이콘을 선택하여, 비디오 탭에서 잠금 해제하고 싶은 비디오를 선택할 수 있습니다.</string>
-    <string name="default_directory_substitute">기본설정: 업그레이드하여 변경함</string>
-    <string name="upgrade_to_premium_dialog_title">Viz Premium으로 업그레이드</string>
-    <string name="upgrade_to_premium_dialog_description">Viz Premium을 구매 시 특징:\n \n\t광고 제거 \n\t갤러리에 비디오 추가 \n\tViz 외부에서 비디오 재생 \n\t다운로드 디렉토리 변경 \n\tViz를 PIN으로 잠금 \n\tViz 개발을 지원함</string>
-    <string name="upgrade_to_premium_launch_google_play">Google Play로 이동함</string>
     <!-- Video related preferences -->
     <string name="video_preferences">비디오 환경설정</string>
     <string name="download_quality_high_preference">더 높은 품질, 더 긴 다운로드</string>
     <string name="download_quality_low_preference">더 낮은 품질, 더 빠른 다운로드</string>
     <string name="download_quality_title">비디오 품질</string>
-    <!-- The title -->
-    <string name="browser_preferences">브라우저 환경설정</string>
-    <string name="preference_homepage_title">브라우저 홈페이지</string>
-    <string name="preference_homepage_summary">기본으로 로드하는 페이지를 설정함</string>
-    <string name="preference_homepage_dialogTitle">Viz 브라우저 홈페이지 설정</string>
-    <!-- As seen in the free version -->
-    <string name="locked_preferences">Premium 기능</string>
-    <!-- As seen in the supported/pro version -->
-    <string name="unlocked_preferences">Premium 기능</string>
     <string name="video_accessibility_title">갤러리에서 비디오 보기</string>
     <string name="download_directory_title">다운로드 디렉토리</string>
     <!-- Download Directory selection info -->
@@ -99,13 +79,11 @@
     <!-- Lock/Unlock (add videos to phone Gallery) -->
     <string name="unlock_videos_description">활성화함</string>
     <string name="lock_videos_description">비활성화함</string>
-    <string name="lock_videos_free_version_description">비활성화됨: 업그레이드하여 활성화함</string>
     <!-- Lock screen (with PIN access) -->
     <string name="lock_screen_title">PIN 보안 활성화하기</string>
     <string name="pin_select_title">PIN 액세스 코드 설정하기</string>
     <string name="lock_screen_summary_on">PIN은 Viz 사용을 위해 필요함</string>
     <string name="lock_screen_summary_off">PIN이 필요 없음</string>
-    <string name="lock_screen_off_free_version">비활성화됨: 업그레이드하여 켜기</string>
     <string name="enter_new_pin">새 PIN 입력</string>
     <string name="confirm_pin">새 PIN 확인</string>
     <string name="enter_pin">PIN 입력</string>
