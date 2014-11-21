@@ -10,14 +10,12 @@ android {
         exclude 'META-INF/NOTICE'
     }
 
-    compileSdkVersion 19
-    buildToolsVersion "21.0.1"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
 
-    defaultConfig {
-        applicationId "com.first3.viz"
-        minSdkVersion 9
-        targetSdkVersion 19
-        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 
     sourceSets {
@@ -26,10 +24,23 @@ android {
         }
     }
 
+    defaultConfig {
+        applicationId "com.first3.viz"
+        minSdkVersion 15
+        targetSdkVersion 21
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+    }
+
     buildTypes {
         release {
             runProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+        debug {
+            debuggable true
+            jniDebugBuild false
+            runProguard false
+            zipAlign true
         }
     }
 
@@ -53,12 +64,11 @@ robolectric {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
-    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
     compile files('libs/jsoup-1.6.1.jar')
+    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.android.support:support-v13:21.0.0'
 
     androidTestCompile 'junit:junit:4.11'
-
     androidTestCompile('org.robolectric:robolectric:2.3') {
         exclude module: 'classworlds'
         exclude module: 'commons-logging'

@@ -45,6 +45,7 @@ package com.first3.viz.ui;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
+import android.app.ListFragment;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -73,7 +74,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.SherlockListFragment;
 import com.first3.viz.Preferences;
 import com.first3.viz.R;
 import com.first3.viz.VizApp;
@@ -89,7 +89,7 @@ import com.first3.viz.utils.VizUtils;
  * <p/>
  * There preferences are defined in xml @ res/preferences.xml
  */
-public class PreferenceListFragment extends SherlockListFragment implements ConfirmNewPinListener {
+public class PreferenceListFragment extends ListFragment implements ConfirmNewPinListener {
     private PreferenceManager mPreferenceManager;
 
     private ListView mListView;
@@ -246,7 +246,7 @@ public class PreferenceListFragment extends SherlockListFragment implements Conf
 
                     // If lock has been turned on, set a new pin
                     if (isLocked) {
-                        pinSelectorDialogFragment.show(PreferenceListFragment.this.getSherlockActivity().getSupportFragmentManager(),
+                        pinSelectorDialogFragment.show(PreferenceListFragment.this.getActivity().getFragmentManager(),
                                 PinSelectorDialogFragment.PIN_SELECTOR_DIALOG_TAG);
                         // Preference will be saved by the dialog
                         return false;

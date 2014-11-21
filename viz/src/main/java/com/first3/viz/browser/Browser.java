@@ -31,9 +31,9 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -51,11 +51,10 @@ import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import android.view.MenuInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.app.ActionBar;
 
 import com.first3.viz.Preferences;
 import com.first3.viz.R;
@@ -318,18 +317,11 @@ public class Browser extends FragmentParent implements TabsAdapter.TabListener {
     }
 
     private void setCanGoBack(ActionBar bar) {
-        boolean bCanGoBack;
-
         if (!mSelected) {
             return;
         }
 
-        if (mVizWebView == null) {
-            bCanGoBack = false;
-        } else {
-            bCanGoBack = mVizWebView.canGoBack();
-        }
-
+        boolean bCanGoBack = (mVizWebView != null) && mVizWebView.canGoBack();
         bar.setDisplayHomeAsUpEnabled(bCanGoBack);
     }
 
@@ -339,7 +331,7 @@ public class Browser extends FragmentParent implements TabsAdapter.TabListener {
             Log.d("Activity is null");
             return;
         }
-        setCanGoBack(a.getSupportActionBar());
+        setCanGoBack(a.getActionBar());
     }
 
     private String normalizeUrl(String url)	{
@@ -436,7 +428,7 @@ public class Browser extends FragmentParent implements TabsAdapter.TabListener {
 
     public void showProgressDialog(Object obj) {
         final ResourceParserTask task = (ResourceParserTask) obj;
-        FragmentManager manager = getActivityDelegate().getSupportFragmentManager();
+        FragmentManager manager = getActivityDelegate().getFragmentManager();
         FragmentTransaction ft = manager.beginTransaction();
 
         Fragment prev = manager.findFragmentByTag(DIALOG_FRAGMENT_TAG);
@@ -459,7 +451,7 @@ public class Browser extends FragmentParent implements TabsAdapter.TabListener {
 
     public void removeProgressDialog() {
         Log.d();
-        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentManager manager = getActivity().getFragmentManager();
         FragmentTransaction ft = manager.beginTransaction();
         Fragment prev = manager.findFragmentByTag(DIALOG_FRAGMENT_TAG);
         if (prev != null) {
@@ -539,7 +531,7 @@ public class Browser extends FragmentParent implements TabsAdapter.TabListener {
         // unmounted and we can no longer write to it.
         File directory = resource.getDownloadDirectory();
         if (!Utils.directoryCreate(directory)) {
-            new AlertDialog.Builder((SherlockFragmentActivity)ad)
+            new AlertDialog.Builder(ad)
                 .setIcon(R.drawable.ic_launcher)
                 .setTitle(VizApp.getResString(R.string.download_failed))
                 .setMessage(VizApp.getResString(R.string.storage_error))
@@ -667,4 +659,3 @@ public class Browser extends FragmentParent implements TabsAdapter.TabListener {
         actionBar.setDisplayHomeAsUpEnabled(false);
     }
 }
-

@@ -21,10 +21,9 @@ package com.first3.viz.utils;
 
 import java.util.Vector;
 
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-
-import android.support.v4.app.FragmentActivity;
 
 /**
  * Message Handler class that supports buffering up of messages when the
@@ -32,7 +31,7 @@ import android.support.v4.app.FragmentActivity;
  */
 public abstract class AbstractPauseHandler extends Handler {
 
-    FragmentActivity mActivity = null;
+    Activity mActivity = null;
 
     /**
      * Message Queue Buffer
@@ -44,11 +43,11 @@ public abstract class AbstractPauseHandler extends Handler {
      */
     private boolean paused;
 
-    public final FragmentActivity getActivity() {
+    public final Activity getActivity() {
         return mActivity;
     }
 
-    public final void setActivity(FragmentActivity activity) {
+    public final void setActivity(Activity activity) {
         this.mActivity = activity;
     }
 
@@ -77,8 +76,6 @@ public abstract class AbstractPauseHandler extends Handler {
      * paused. If not handled the message will be saved and replayed when the
      * activity resumes.
      *
-     * @param message
-     *            the message which optional can be handled
      * @return true if the message is to be stored
      */
     protected abstract boolean storeMessage(Message message);
@@ -106,4 +103,3 @@ public abstract class AbstractPauseHandler extends Handler {
         }
     }
 }
-

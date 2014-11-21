@@ -2,7 +2,7 @@
 
 <resources>
     <style name="Viz"
-        parent="@android:style/Theme.Holo">
+        parent="@android:style/Theme.Material">
     	<!-- style of the actionbar, where the home button lives -->
   	    <item name="android:actionBarStyle">@style/VizActionBar</item>
 
@@ -17,16 +17,16 @@
     </style>
 
 
-    <style name="VizActionBar" parent="@android:style/Widget.Holo.ActionBar">
+    <style name="VizActionBar" parent="@android:style/Widget.Material.ActionBar">
         <item name="android:background">@drawable/viz_tab_unselected</item>
         <!-- <item name="background">@drawable/viz_tab_unselected</item> -->
     </style>
 
-    <style name="VizActionBarTabBar" parent="@android:style/Widget.Holo.ActionBar.TabBar">
+    <style name="VizActionBarTabBar" parent="@android:style/Widget.Material.ActionBar.TabBar">
     	<item name="android:showDividers">@null</item>
     </style>
 
-     <style name="VizActionBarTab" parent="@android:style/Widget.Holo.ActionBar.TabView">
+     <style name="VizActionBarTab" parent="@android:style/Widget.Material.ActionBar.TabView">
         <item name="android:background">@drawable/viz_tab_indicator</item>
         <!-- <item name="background">@drawable/viz_tab_indicator</item> -->
     </style>

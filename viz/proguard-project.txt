@@ -4,7 +4,7 @@
 #-renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable
 
-# ACRA needs "annotations" so add this... 
+# ACRA needs "annotations" so add this...
 -keepattributes *Annotation*
 
 # keep this class so that logging will show 'ACRA' and not a obfuscated name like 'a'.
@@ -35,8 +35,6 @@ public org.acra.ErrorReporter$ReportsSenderWorker handleSilentException(java.lan
 ## Start ABS specific
 -keep class android.support.v4.app.** { *; }
 -keep interface android.support.v4.app.** { *; }
--keep class com.actionbarsherlock.** { *; }
--keep interface com.actionbarsherlock.** { *; }
 
 -keepattributes *Annotation*
 ## End ABS specific
@@ -49,25 +47,3 @@ public org.acra.ErrorReporter$ReportsSenderWorker handleSilentException(java.lan
     *;
 }
 # End Crittercism specific
-
-
-# Start Flurry specific
-
--keep class com.flurry.** { *; }
--dontwarn com.flurry.**
--keepattributes *Annotation*,EnclosingMethod
--keepclasseswithmembers class * {
-public <init>(android.context.Context, android.util.AttributeSet, int);
-}
-
-# end Flurry specific
-
--keepclassmembers class com.millennialmedia.android.* { public *; } 
--keep class com.millennialmedia.android.**
--dontwarn com.nuance.**
-
-# AdMob Support
--keep class com.google.ads.**
-
-# Make sure that you also have this line for MoPub integration:
--keep public class com.mopub.mobileads.*

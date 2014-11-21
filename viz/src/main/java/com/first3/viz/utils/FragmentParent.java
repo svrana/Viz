@@ -19,11 +19,12 @@
 
 package com.first3.viz.utils;
 
+import android.app.Fragment;
+
 import com.first3.viz.ui.ActivityDelegate;
 
-import com.actionbarsherlock.app.SherlockFragment;
 
-public class FragmentParent extends SherlockFragment {
+public class FragmentParent extends Fragment {
 
     public ActivityDelegate getActivityDelegate() {
         return (ActivityDelegate) getActivity();

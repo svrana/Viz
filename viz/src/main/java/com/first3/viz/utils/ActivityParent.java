@@ -19,16 +19,15 @@
 
 package com.first3.viz.utils;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Message;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.Fragment;
+import android.app.FragmentManager;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-
-public abstract class FragmentActivityParent extends SherlockFragmentActivity {
+public abstract class ActivityParent extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public abstract class FragmentActivityParent extends SherlockFragmentActivity {
 
         if (savedInstanceState == null) {
             final Fragment state = new State();
-            final FragmentManager fm = getSupportFragmentManager();
+            final FragmentManager fm = getFragmentManager();
             final FragmentTransaction ft = fm.beginTransaction();
             ft.add(state, State.TAG);
             ft.commit();
@@ -46,7 +45,7 @@ public abstract class FragmentActivityParent extends SherlockFragmentActivity {
     public abstract void processMessage(Message msg);
 
     public void sendMessage(int what, int command, Object obj) {
-        final FragmentManager fm = getSupportFragmentManager();
+        final FragmentManager fm = getFragmentManager();
         State fragment = (State) fm.findFragmentByTag(State.TAG);
         if (fragment != null) {
             Log.d("sendMessage(what=" + what + ", command=" + command + ")");
@@ -67,7 +66,7 @@ public abstract class FragmentActivityParent extends SherlockFragmentActivity {
 
         @Override
         public final void processMessage(Message msg) {
-            FragmentActivityParent parent = (FragmentActivityParent) this.getActivity();
+            ActivityParent parent = (ActivityParent) this.getActivity();
             if (parent != null) {
                 parent.processMessage(msg);
             }
