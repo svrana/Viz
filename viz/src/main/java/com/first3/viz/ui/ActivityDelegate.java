@@ -53,7 +53,7 @@ import com.first3.viz.provider.VizDatabase;
 import com.first3.viz.ui.Downloads;
 import com.first3.viz.ui.PinSelectorDialogFragment;
 import com.first3.viz.ui.PinSelectorDialogFragment.DismissPinDialogListener;
-import com.first3.viz.ui.PreferenceListFragment;
+import com.first3.viz.ui.Settings;
 import com.first3.viz.utils.ActivityParent;
 import com.first3.viz.utils.ImageUtilities;
 import com.first3.viz.utils.Log;
@@ -77,7 +77,7 @@ public class ActivityDelegate extends ActivityParent implements
     private Browser mBrowser;
     private Downloads mDownloads;
     private FileManager mFileManager;
-    private PreferenceListFragment mSettings;
+    private Settings mSettings;
     private VizDatabase mVizDatabase;
     private PinSelectorDialogFragment pinSelectorDialogFragment;
     private ImageView mIconView = null;
@@ -139,7 +139,7 @@ public class ActivityDelegate extends ActivityParent implements
         mTabsAdapter.addTab(mFavoritesTab, Favorites.class, null);
         mTabsAdapter.addTab(mBrowserTab, Browser.class, null);
         mTabsAdapter.addTab(mDownloadsTab, Downloads.class, null);
-        mTabsAdapter.addTab(mSettingsTab, PreferenceListFragment.class, null);
+        mTabsAdapter.addTab(mSettingsTab, Settings.class, null);
 
         getVideoPlayerFragment().addEventListener(
                 new VideoPlayer.EventListener() {
@@ -383,9 +383,9 @@ public class ActivityDelegate extends ActivityParent implements
         return mFavorites;
     }
 
-    public PreferenceListFragment getSettingsFragment() {
+    public Settings getSettingsFragment() {
         if (mSettings == null) {
-            mSettings = (PreferenceListFragment) getFragment(FragmentName.SETTINGS);
+            mSettings = (Settings) getFragment(FragmentName.SETTINGS);
         }
         return mSettings;
     }

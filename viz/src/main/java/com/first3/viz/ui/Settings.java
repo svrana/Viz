@@ -17,43 +17,11 @@
  * along with Viz.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* The MIT License (MIT)
- *
- *  Copyright (c) 2011-2014 <copyright holders>
- *
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in
- *  all copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- *  THE SOFTWARE.
- */
-
 package com.first3.viz.ui;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-
-import android.app.ListFragment;
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -61,49 +29,35 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.first3.viz.Preferences;
 import com.first3.viz.R;
 import com.first3.viz.VizApp;
 import com.first3.viz.ui.PinSelectorDialogFragment.ConfirmNewPinListener;
 import com.first3.viz.utils.Log;
-import com.first3.viz.utils.Utils;
 import com.first3.viz.utils.VizUtils;
 
 /**
- * Android does not have a PreferenceFragment in its support library. This is
- * a hack around that, using reflection to get access to parts of the
- * PreferenceManager that were not made public.
- * <p/>
- * There preferences are defined in xml @ res/preferences.xml
+ * Settings to configure various options.
+ *
+ * Preferences are defined in xml @ res/preferences.xml
  */
-public class PreferenceListFragment extends ListFragment implements ConfirmNewPinListener {
+public class Settings extends PreferenceFragment implements ConfirmNewPinListener {
     private PreferenceManager mPreferenceManager;
-
     private ListView mListView;
     private ViewGroup mParentView;
-    private ViewGroup mSettingsHeader;
-    private TextView mSupportText;
     private int mParentViewId = R.layout.settings;
     private int mListViewId = android.R.id.list;
-
-    /**
-     * The Resource Id of your preference screen.
-     */
     private int mPreferenceScreenId = R.xml.preferences;
-
     private OnPreferenceAttachedListener mListener;
 
     /**
@@ -112,7 +66,6 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
     private static final int FIRST_REQUEST_CODE = 100;
     private static final int MSG_BIND_PREFERENCES = 0;
 
-    private PreferenceScreen mPrefScreen;
     private CheckBoxPreference mUnlockVideosCheckbox;
     private CheckBoxPreference mPinLock;
     private CheckBoxPreference mExternalPlayerPref;
@@ -120,29 +73,7 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
     private DownloadDirectoryDialogPreference mSelectDownloadDirectory;
     private PreferenceGroup mOtherPreferences;
     private ListPreference mDownloadQualityListPref;
-
-    private Handler mHandler = new Handler(VizApp.getLooper()) {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MSG_BIND_PREFERENCES:
-                    bindPreferences();
-                    break;
-            }
-        }
-    };
-
-    public PreferenceListFragment() {
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ViewParent p = mParentView.getParent();
-        if (p != null) {
-            ((ViewGroup) p).removeView(mParentView);
-        }
-    }
+    private Handler mHandler = new Handler(VizApp.getLooper());
 
     private void trigger_updatePurchaseUI() {
         mHandler.post(new Runnable() {
@@ -159,30 +90,29 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
         if (bundle != null) {
             mPreferenceScreenId = bundle.getInt("xml");
         }
-        mPreferenceManager = onCreatePreferenceManager();
 
         mParentView = (ViewGroup) LayoutInflater.from(getActivity()).inflate(mParentViewId, null);
         mListView = (ListView) mParentView.findViewById(mListViewId);
         mListView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        addPreferencesFromResource(mPreferenceScreenId);
+        addPreferencesFromResource(R.xml.preferences);
         postBindPreferences();
 
         if (mListener != null) {
             mListener.onPreferenceAttached(getPreferenceScreen(), mPreferenceScreenId);
         }
 
-        mPrefScreen = getPreferenceScreen();
-        if (mPrefScreen != null) {
-            mOtherPreferences = (PreferenceGroup) mPrefScreen.findPreference("other_preferences");
-            mDownloadQualityListPref = (ListPreference) mPrefScreen.findPreference(Preferences.DOWNLOAD_QUALITY);
-            mUnlockVideosCheckbox = (CheckBoxPreference) mPrefScreen.findPreference(Preferences.SHARE_VIDEOS);
-            mSelectDownloadDirectory = (DownloadDirectoryDialogPreference) mPrefScreen
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        if (prefScreen != null) {
+            mOtherPreferences = (PreferenceGroup) prefScreen.findPreference("other_preferences");
+            mDownloadQualityListPref = (ListPreference) prefScreen.findPreference(Preferences.DOWNLOAD_QUALITY);
+            mUnlockVideosCheckbox = (CheckBoxPreference) prefScreen.findPreference(Preferences.SHARE_VIDEOS);
+            mSelectDownloadDirectory = (DownloadDirectoryDialogPreference) prefScreen
                     .findPreference(Preferences.DOWNLOAD_DIRECTORY);
-            mPinLock = (CheckBoxPreference) mPrefScreen.findPreference(Preferences.PIN_LOCKED);
+            mPinLock = (CheckBoxPreference) prefScreen.findPreference(Preferences.PIN_LOCKED);
             pinSelectorDialogFragment = PinSelectorDialogFragment.newInstance(getString(R.string.enter_new_pin), true);
             pinSelectorDialogFragment.registerConfirmPinListener(this);
             pinSelectorDialogFragment.registerDialogDismissedListener(getActivity());
-            mExternalPlayerPref = (CheckBoxPreference) mPrefScreen.findPreference(Preferences.USE_EXTERNAL_PLAYER);
+            mExternalPlayerPref = (CheckBoxPreference) prefScreen.findPreference(Preferences.USE_EXTERNAL_PLAYER);
 
             mDownloadQualityListPref.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
                 @Override
@@ -192,7 +122,7 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
                     // not sure why we have to change this manually..
                     SharedPreferences.Editor editor = VizApp.getPrefs().edit();
                     editor.putString(Preferences.DOWNLOAD_QUALITY, downloadQuality);
-                    editor.commit();
+                    editor.apply();
                     updatePurchaseUI(); // update the preference summary
                     return true;
                 }
@@ -246,14 +176,14 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
 
                     // If lock has been turned on, set a new pin
                     if (isLocked) {
-                        pinSelectorDialogFragment.show(PreferenceListFragment.this.getActivity().getFragmentManager(),
+                        pinSelectorDialogFragment.show(Settings.this.getActivity().getFragmentManager(),
                                 PinSelectorDialogFragment.PIN_SELECTOR_DIALOG_TAG);
                         // Preference will be saved by the dialog
                         return false;
                     } else {
                         VizUtils.showVizThumbnailInTray(getActivity());
                         // Just turn it off
-                        VizApp.getPrefs().edit().putBoolean(Preferences.PIN_LOCKED, false).commit();
+                        VizApp.getPrefs().edit().putBoolean(Preferences.PIN_LOCKED, false).apply();
                         return true;
                     }
                 }
@@ -270,59 +200,9 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
     }
 
     @Override
-    public void onStart() {
-        Log.d();
-        super.onStart();
-    }
-
-    @Override
-    public void onResume() {
-        Log.d();
-        super.onResume();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        try {
-            Method m = PreferenceManager.class.getDeclaredMethod("dispatchActivityStop");
-            m.setAccessible(true);
-            m.invoke(mPreferenceManager);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mListView = null;
-        try {
-            Method m = PreferenceManager.class.getDeclaredMethod("dispatchActivityDestroy");
-            m.setAccessible(true);
-            m.invoke(mPreferenceManager);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt("xml", mPreferenceScreenId);
         super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        try {
-            Method m = PreferenceManager.class.getDeclaredMethod("dispatchActivityResult", int.class, int.class,
-                    Intent.class);
-            m.setAccessible(true);
-            m.invoke(mPreferenceManager, requestCode, resultCode, data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -336,120 +216,6 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
             return;
         }
         mHandler.obtainMessage(MSG_BIND_PREFERENCES).sendToTarget();
-    }
-
-    private void bindPreferences() {
-        final PreferenceScreen preferenceScreen = getPreferenceScreen();
-        if ((preferenceScreen != null) && (mListView != null)) {
-            preferenceScreen.bind(mListView);
-        }
-    }
-
-    /**
-     * Creates the {@link PreferenceManager}.
-     *
-     * @return The {@link PreferenceManager} used by this activity.
-     */
-    private PreferenceManager onCreatePreferenceManager() {
-        try {
-            Constructor<PreferenceManager> c = PreferenceManager.class
-                    .getDeclaredConstructor(Activity.class, int.class);
-            c.setAccessible(true);
-            PreferenceManager preferenceManager = c.newInstance(this.getActivity(), FIRST_REQUEST_CODE);
-            return preferenceManager;
-        } catch (Exception e) {
-            Log.w("Could not create preference manager");
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * Returns the {@link PreferenceManager} used by this activity.
-     *
-     * @return The {@link PreferenceManager}.
-     */
-    public PreferenceManager getPreferenceManager() {
-        return mPreferenceManager;
-    }
-
-    /**
-     * Sets the root of the preference hierarchy that this activity is showing.
-     *
-     * @param preferenceScreen The root {@link PreferenceScreen} of the preference hierarchy.
-     */
-    public void setPreferenceScreen(PreferenceScreen preferenceScreen) {
-        try {
-            Method m = PreferenceManager.class.getDeclaredMethod("setPreferences", PreferenceScreen.class);
-            m.setAccessible(true);
-            boolean result = (Boolean) m.invoke(mPreferenceManager, preferenceScreen);
-            if (result && (preferenceScreen != null)) {
-                postBindPreferences();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Gets the root of the preference hierarchy that this activity is showing.
-     *
-     * @return The {@link PreferenceScreen} that is the root of the preference hierarchy.
-     */
-    public PreferenceScreen getPreferenceScreen() {
-        try {
-            Method m = PreferenceManager.class.getDeclaredMethod("getPreferenceScreen");
-            m.setAccessible(true);
-            return (PreferenceScreen) m.invoke(mPreferenceManager);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * Adds preferences from activities that match the given {@link Intent}.
-     *
-     * @param intent The {@link Intent} to query activities.
-     */
-    public void addPreferencesFromIntent(Intent intent) {
-        throw new RuntimeException("unimplemented, sorry");
-    }
-
-    /**
-     * Inflates the given XML resource and adds the preference hierarchy to the current preference hierarchy.
-     *
-     * @param preferencesResId The XML resource ID to inflate.
-     */
-    public void addPreferencesFromResource(int preferencesResId) {
-        try {
-            Method m = PreferenceManager.class.getDeclaredMethod("inflateFromResource", Context.class, int.class,
-                    PreferenceScreen.class);
-            m.setAccessible(true);
-            PreferenceScreen prefScreen = (PreferenceScreen) m.invoke(mPreferenceManager, getActivity(),
-                    preferencesResId, getPreferenceScreen());
-            setPreferenceScreen(prefScreen);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Finds a {@link Preference} based on its key.
-     *
-     * @param key The key of the preference to retrieve.
-     * @return The {@link Preference} with the key, or null.
-     * @see PreferenceGroup#findPreference(CharSequence)
-     */
-    public Preference findPreference(CharSequence key) {
-        if (mPreferenceManager == null) {
-            return null;
-        }
-        return mPreferenceManager.findPreference(key);
-    }
-
-    public void setOnPreferenceAttachedListener(OnPreferenceAttachedListener listener) {
-        mListener = listener;
     }
 
     public void updatePurchaseUI() {
@@ -494,8 +260,6 @@ public class PreferenceListFragment extends ListFragment implements ConfirmNewPi
                 mUnlockVideosCheckbox.setChecked(true);
                 updatePurchaseUI();
             }
-        } else {
-            // the user has changed the download directory
         }
 
         mPinLock.setEnabled(true);
