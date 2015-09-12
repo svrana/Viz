@@ -31,7 +31,7 @@ The resulting .apk files  will be located in the viz/build/outputs directory.
 You might find that your device doesn't let you install your build if you
 already have the (now defunct) version of Viz from Google Play installed.
 This is standard Android security as it it won't let you directly replace an
-app that's been signed with a different key.  Manually uninstall GitHub from
+app that's been signed with a different key.  Manually uninstall Viz from
 your device and you will then be able to install your own built version.
 
 Optionally, building from within Android Studio is also possible.
