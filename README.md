@@ -45,4 +45,4 @@ Any contributions, large or small, major features, bug fixes, additional
 language translations, unit/integration tests are welcomed and appreciated.
 
 [1]: https://api.travis-ci.org/svrana/Viz.svg?branch=master
-[2]: http://vranix.com/viz_video_downloader_logo_21.png
+[2]: http://hosted.vranix.com/viz-remaining.png
